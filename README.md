@@ -1,3 +1,17 @@
+To Run Locally:
+npm install --save --legacy-peer-deps   ## To install dependencies - this may take a while, don't panic. Even when it looks like it froze, just be patient.
+npm start                               ## Starting up local host project - keep this running during the testing process
+swa start http://localhost:3000         ## After localhost is running, starts up the azure static app cli so we can use azure's auth on local - keep this running during the testing
+
+And then you'll be working off of localhost 4280, where the CLI is running so you can auth 
+Ctrl + C to stop both of the above commands when testing is done
+
+
+Helpful Links:
+Fallback Routing - https://medium.com/bb-tutorials-and-thoughts/azure-how-to-configure-fallback-routes-for-react-static-web-apps-ac3bc33c0088
+
+
+Create-React-App Documentation:
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,7 +82,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
-FALLBACK ROUTING : https://medium.com/bb-tutorials-and-thoughts/azure-how-to-configure-fallback-routes-for-react-static-web-apps-ac3bc33c0088
