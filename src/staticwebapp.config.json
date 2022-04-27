@@ -1,0 +1,44 @@
+{
+    "routes": [
+        {
+            "route": "/admin/*",
+            "allowedRoles": [ "admin" ]
+        },
+        {
+            "route": "/queues/*",
+            "allowedRoles": [ "authenticated" ]
+        },
+        {
+            "route": "/authenticated/*",
+            "allowedRoles": [ "authenticated" ]
+        }
+    ],
+    "navigationFallback": {
+        "rewrite": "index.html",
+        "exclude": ["/static/images/*.{png,jpg,gif}", "/static/css/*"]
+    },
+    "mimeTypes": {
+        ".json": "text/json"
+    },
+    "auth": {
+        "rolesSource": "/api/GetRoles",
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+                "registration": {
+                    "openIdIssuer": "https://login.microsoftonline.com/944a2343-09e7-4e7b-ac43-1eda5afef90d",
+                    "clientIdSettingName": "AAD_CLIENT_ID",
+                    "clientSecretSettingName": "AAD_CLIENT_SECRET"
+                },
+                "login": {
+                    "loginParameters": [
+                        "resource=https://graph.microsoft.com"
+                    ]
+                }
+            }
+        }
+    },
+    "globalHeaders": {
+        "Cache-Control": "no-cache"
+    }
+}
